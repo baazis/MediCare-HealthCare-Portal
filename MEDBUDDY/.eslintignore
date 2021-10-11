@@ -1,9 +1,0 @@
-/node_modules
-/config
-.DS_Store
-/*.env
-keys.js
-/public
-.min.js
-.min.css
-/coverage
