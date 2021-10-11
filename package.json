@@ -1,5 +1,5 @@
 {
-  "name": "medbuddy",
+  "name": "medicare",
   "version": "1.0.0",
   "description": "A website which connects doctors, patients and services like ambulance provider",
   "main": "server.js",
@@ -40,7 +40,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.13",
     "prettier": "^2.2.1",
     "superagent": "^6.1.0",
     "supertest": "^6.0.1"
