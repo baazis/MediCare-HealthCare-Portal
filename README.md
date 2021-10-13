@@ -85,8 +85,8 @@ their location.</li>
 
 ## Contributors
 
-### 1- Ritika Singh
-### 2- Saurabh Singh
+### 1- [Ritika](https://github.com/ritikaxx)
+### 2- [Saurabh](https://github.com/baazis)
 ### 3- Anshul Ola
 
 
