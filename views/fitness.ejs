@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!--Meta Data-->
+    <%- include('partial/title.ejs'); %> 
+
+    <% if (data.NODE_ENV == 'production') { %>
+      <!-- Production Stylesheets -->
+      <link rel="stylesheet" href="assets/production/css/about.min.css">
+
+    <% }else { %>
+      <!-- Development Stylesheets -->
+      <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
+      <link rel="stylesheet" href="assets/lib/css/responsive.css">
+      <link rel="stylesheet" href="assets/lib/css/select2.min.css">
+      <link rel="stylesheet" href="assets/lib/css/spacing.css">
+      <link rel="stylesheet" href="assets/lib/css/style.css">
+      <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/header.css">
+      <link rel="stylesheet" href="assets/css/faq.css">
+      
+    <% } %>
+  </head>
+<%- include('partial/header.ejs') %>
+ 
+
+<body>
+    <div class="choose-area pb_90">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="headline">
+                        <h2>Quick Fitness</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-6 col-md-8 login-box">
+                    <div class="col-lg-12 login-form">
+                        <div class="col-lg-12 login-form">
+                            <form action="/fitness" method="post" autocomplete="off">
+                                <div class="form-group">
+                                    <label class="form-control-label">NAME</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">DATE OF BIRTH</label><br><br>
+                                    <input type="date" placeholder="DD/MM/YYYY" name="dob" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">MOBILE NUMBER</label>
+                                    <input type="tel" class="form-control" name="mob" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">EMAIL</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">ADDRESS</label>
+                                    <textarea row="5" class="form-control xyz" name="address" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">What is your BMI?</label>
+                                    <select class="form-control" name="bmi">
+                                      <option value=10>Between 22-26</option>
+                                      <option value=8>Between 26-28 or 20-22</option>
+                                      <option value=6>Between 18-20 or 28-32</option>
+                                      <option value=4>Below 18 or Above 32</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Average Workout Time</label>
+                                    <select class="form-control" name="workout">
+                                      <option value=10>Above 1 Hours</option>
+                                      <option value=8>1 Hour - 30 Min</option>
+                                      <option value=6>15 Min - 30 Min</option>
+                                      <option value=4>Below 15 Min</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Average Yoga Time</label>
+                                    <select class="form-control" name="yoga">
+                                      <option value=10>Above 1 Hour</option>
+                                      <option value=8>1 Hour - 30 Min</option>
+                                      <option value=6>15 Min - 30 Min</option>
+                                      <option value=4>Below 15 Min</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Average HeartBeat</label>
+                                    <select class="form-control" name="heartbeat">
+                                      <option value=10>Between 70-75</option>
+                                      <option value=8>Between 65-70 or 75-80</option>
+                                      <option value=6>Between 60-65 or 80-85</option>
+                                      <option value=4>None in the Range</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Average BloodPressure</label>
+                                    <select class="form-control" name="bp">
+                                      <option value=10>Between 120-80</option>
+                                      <option value=8>Between 120+-10 and 80+-10</option>
+                                      <option value=6>Between 120+-20 and 80+-20</option>
+                                      <option value=4>None in the Range</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">On Regular Medication</label>
+                                    <select class="form-control" name="medication">
+                                      <option value=10>No</option>
+                                      <option value=8>Yes, Less than 2 years</option>
+                                      <option value=6>Yes, more than 2 years</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Covid Diagonised</label>
+                                    <select class="form-control" name="covid">
+                                      <option value=10>No</option>
+                                      <option value=0>Yes</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Lung Capacity</label>
+                                    <select class="form-control" name="lungs">
+                                      <option value=10>Above 400 ml</option>
+                                      <option value=8>Between 350-400 ml</option>
+                                      <option value=6>Between 300-350 ml</option>
+                                      <option value=4>Below 300 ml</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Average Pulse</label>
+                                    <select class="form-control" name="pulse">
+                                      <option value=10>Between 70-75</option>
+                                      <option value=8>Between 65-70 or 75-80</option>
+                                      <option value=6>Between 60-65 or 80-85</option>
+                                      <option value=4>None in the Range</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="form-control-label">Average Body Temperature</label>
+                                    <select class="form-control" name="temp">
+                                      <option value=10>Between 97-98</option>
+                                      <option value=8>Between 96-97 or 98-99</option>
+                                      <option value=6>None in the Range</option>
+                                    </select>
+                                  </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">ENTER YOUR PROBLEM IN BRIEF</label>
+                                    <textarea row="5" class="form-control xyz" name="Problem" required></textarea>
+                                </div>
+
+                                <div class="col-lg-12 mb-4">
+                                    <div class="col-lg-6 ">
+                                        <!-- Error Message -->
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6">
+                                            <button type="submit" name="submit" class="btn btn-primary">CHECK YOUR FITNESS LEVEL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxU06oBiODARW3eE8cDRqm9I7GBX9yeL2N6qxuSPcYzwsp0ydA5N6Y/exec'
+
+        const form = document.forms['Appointment']
+
+
+
+        form.addEventListener('submit', e => {
+
+          e.preventDefault()
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+
+            .then(response => alert("We will contact you as soon as you get an appointment.."))
+
+            .catch(error => console.error('Error!', error.message))
+
+        })
+
+      </script>
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
+
+
+<%- include('partial/footer.ejs') %>

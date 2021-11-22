@@ -29,16 +29,15 @@
           PATIENT
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownPatient">
-          <% if (data.user==undefined ){ %>
+       
             <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
             <a class="dropdown-item" href="/patientlogin">LOGIN</a>
-            <% } else if(data.user.usertype=="patient" ) { %>
+            
               <a class="dropdown-item" href="/patienthome">PATIENT HOME</a>
               <a class="dropdown-item" href="/logout">LOGOUT</a>
-              <% } else { %>
-                <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
-                <a class="dropdown-item" href="/patientlogin">LOGIN</a>
-                <% } %>
+             
+              
+                
         </div>
 
       </li>
@@ -48,16 +47,14 @@
           DOCTOR
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownDoctor">
-          <% if (data.user==undefined){ %>
+          
             <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
             <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
-            <% } else if(data.user.usertype=="doctor" ) { %>
+            
               <a class="dropdown-item" href="/doctorhome">DOCTOR HOME</a>
               <a class="dropdown-item" href="/logout">LOGOUT</a>
-              <% } else { %>
-                <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
-                <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
-                <% } %>
+              
+             
         </div>
 
       </li>
@@ -67,16 +64,15 @@
           AMBULANCE SERVICE
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownAmbulance">
-          <% if (data.user==undefined){ %>
+      
             <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
             <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
-            <% } else if(data.user.usertype=="AmbulanceProvider" ) { %>
+          
               <a class="dropdown-item" href="/ambulancehome">AMBULANCE SERVICE HOME</a>
               <a class="dropdown-item" href="/logout">LOGOUT</a>
-              <% } else { %>
-                <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
-                <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
-                <% } %>
+            
+              
+               
         </div>
 
       </li>
@@ -87,10 +83,14 @@
         <a class="nav-link" href="/services">SERVICES</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/gallery">GALLERY</a>
+        <a class="nav-link" href="/Community">SPACE</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/news">NEWS</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/fitness">QUICK FITNESS</a>
+      </li>
       </li>
     </ul>
   </div>
@@ -107,3 +107,11 @@
   </div>
 </div>
 <!--Banner End-->
+
+<div style="position: fixed; z-index: 1000000;right: 20px;bottom: 20px; height: 80px;">
+  
+   <form action="/maps" method="GET">
+     <button type="submit" class="btn btn-danger">EMERGENCY</button>
+   </form>
+  <!-- <a href="/maps"><button href="/maps" type="button" class="btn btn-danger">EMERGENCY</button></a> -->
+</div>
