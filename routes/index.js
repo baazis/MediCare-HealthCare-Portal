@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const router = express.Router({ mergeParams: true });
 const Post = require('../models/post');
 const Question = require('../models/question');
+const request = require("request");
 
 // GET ROUTES
 
@@ -29,6 +30,47 @@ router.get('/about', (req, res) => {
   res.render('about', { data });
 });
 
+let hospital = [];
+let hospital_array = [];
+request("http://www.communitybenefitinsight.org/api/get_hospitals.php?state=NC", function(error, response, body) {
+  hospital = JSON.parse(body);
+  hospital.slice(0, 100);
+});
+
+router.get("/hospital", function(req, res) {
+  res.render("hospital", {
+    hospital_data: hospital,
+  });
+});
+
+let hospitalCity;
+let hospitalName;
+router.post("/searchHospital",(req, res)=> {
+  hospitalCity = req.body.city;
+  hospitalName = req.body.hospitalName;
+
+  let searchedHospital = [];
+  for (let i = 0; i < hospital.length; i++) {
+    if (hospital[i].city === hospitalCity) {
+      searchedHospital.push(hospital[i]);
+      break;
+    }
+  }
+
+  for (let i = 0; i < hospital.length; i++) {
+    if (hospital[i].name === hospitalName) {
+      if (searchedHospital[0].name !== hospitalName) {
+        searchedHospital.push(hospital[i]);
+      }
+      break;
+    }
+  }
+
+  res.render("hospital", {
+    hospital_data: searchedHospital,
+  });
+
+});
 
 router.get('/faq', (req, res) => {
   const data = {};
