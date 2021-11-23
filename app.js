@@ -15,6 +15,7 @@ const DoctorRoutes = require('./routes/doctor');
 const AmbulanceRoutes = require('./routes/ambulance');
 const { MongodbUrl } = require('./config/config');
 
+
 const app = express();
 
 app.use(compression());
@@ -41,6 +42,8 @@ app.use(
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true }));
 app.use(methodOverride('_method'));
+
+
 
 
 //  PASSPORT CONFIGURATION //
@@ -88,5 +91,7 @@ app.use(AmbulanceRoutes);
 app.use((req, res) => {
   res.status(404).render('404');
 });
+
+
 
 module.exports = app;

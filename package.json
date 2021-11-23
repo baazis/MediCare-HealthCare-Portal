@@ -15,16 +15,19 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.22.0",
     "compression": "^1.7.4",
     "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "helmet": "^4.3.1",
+    "math": "0.0.3",
     "method-override": "^3.0.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.10.0",
     "multer-storage-cloudinary": "^4.0.0",
     "nodemailer": "^6.4.11",
@@ -33,7 +36,8 @@
     "passport-local-mongoose": "^6.0.1",
     "peer": "^0.6.1",
     "request": "^2.88.2",
-    "socket.io": "^4.4.0",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.4.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

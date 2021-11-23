@@ -5,6 +5,58 @@ const router = express.Router({ mergeParams: true });
 const Post = require('../models/post');
 const Question = require('../models/question');
 const request = require("request");
+const app = express();
+const axios = require('axios')
+const moment = require('moment')
+app.locals.moment = moment;
+
+
+router.get('/news',async(req,res)=>{
+    try {
+        var url = 'https://newsapi.org/v2/everything?' +
+        'q=Health&' +
+        'from=2021-11-23&' +
+        'sortBy=popularity&' +
+        'apiKey=f08a12a57b514b04915f6ee0d0cc819c';
+
+        const news_get =await axios.get(url)
+        res.render('news',{articles:news_get.data.articles})
+
+
+
+
+    } catch (error) {
+        if(error.response){
+            console.log(error)
+        }
+
+    }
+})
+
+router.post('/search',async(req,res)=>{
+    const search=req.body.search
+    // console.log(req.body.search)
+
+    try {
+        var url = `http://newsapi.org/v2/everything?q=${search}&apiKey=f08a12a57b514b04915f6ee0d0cc819c`
+
+        const news_get =await axios.get(url)
+        res.render('news',{articles:news_get.data.articles})
+
+
+
+
+
+    } catch (error) {
+        if(error.response){
+            console.log(error)
+        }
+
+    }
+})
+
+
+
 
 // GET ROUTES
 
@@ -261,12 +313,6 @@ score: score
 
 
 
-router.get('/news', (req, res) => {
-  const data = {};
-  data.user = req.user;
-  data.NODE_ENV = process.env.NODE_ENV;
-  res.render('news', { data });
-});
 
 router.get('/privacypolicy', (req, res) => {
   const data = {};
@@ -295,7 +341,6 @@ router.get('/view2', (req, res) => {
   data.NODE_ENV = process.env.NODE_ENV;
   res.render('view2', { data });
 });
-
 
 
 // LOGOUT ROUTE
