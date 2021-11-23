@@ -72,6 +72,26 @@ router.post("/searchHospital",(req, res)=> {
 
 });
 
+router.get("/ambulance",(req, res)=>{
+  res.render("ambulance", {
+    hospital_data: hospital
+  });
+});
+
+router.post("/searchAmbulance", (req, res)=>{
+  const city = req.body.city;
+  let searchedHospital = [];
+  for (let i = 0; i < hospital.length; i++) {
+    if (hospital[i].city === city) {
+      searchedHospital.push(hospital[i]);
+      break;
+    }
+  }
+  res.render("selectedAmbulance", {
+    hospital_data: searchedHospital,
+  });
+});
+
 router.get('/faq', (req, res) => {
   const data = {};
   data.user = req.user;

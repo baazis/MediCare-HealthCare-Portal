@@ -1,0 +1,102 @@
+<head>
+   <!-- Production Stylesheets -->
+   <link rel="stylesheet" href="assets/production/css/about.min.css">
+    
+    
+   <!-- Development Stylesheets -->
+   <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
+   <link rel="stylesheet" href="assets/lib/css/responsive.css">
+   <link rel="stylesheet" href="assets/lib/css/select2.min.css">
+   <link rel="stylesheet" href="assets/lib/css/spacing.css">
+   <link rel="stylesheet" href="assets/lib/css/style.css">
+   <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
+   <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/header.css">
+   <link rel="stylesheet" href="assets/css/faq.css">
+</head>
+
+<%- include('partial/header.ejs') %>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+    <div class="choose-area pb_90">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="headline hospital-container">
+                        <h2>AMBULANCE SERVICES</h2>
+                        <h3>Choose Your Nearby Area to Avail Ambulance Service</h3>
+                    </div>
+                </div>
+            </div>
+
+            <form action="/searchAmbulance" method="POST">
+                <div class="row mt-2" >
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="city">Search By City</label>
+                            <select class="form-control" id="city" name="city">
+              <%  hospital_data.forEach(function(hospital){ %>
+              <option value="<%= hospital.city %>"><%= hospital.city %></option>
+              <% }) %>
+            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" style="text-align: right;">
+                        <button type="submit" class="btn btn-dark submit-button">SUBMIT</button>
+                    </div>
+
+                </div>
+            </form>
+            <br>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="headline hospital-container">
+                        <h4>HOSPITALS WITH OUR COLLABORATIONS PROVIDING AMBULANCE SERVICES</h4>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row justify-content-center">
+              <table>
+                <tr>
+                  <th>Hospital Name</th>
+                  <th>Hospital City</th>
+                  <th>Hospital Street Adress</th>
+                </tr>
+                <%  hospital_data.forEach(function(hospital){ %>
+                <tr>
+                  <td><%= hospital.name %></td>
+                  <td><%= hospital.city %></td>
+                  <td><%= hospital.street_address %></td>
+                </tr>
+                <%  }) %>
+              </table>
+
+
+
+            </div>
+        </div>
+    </div>
