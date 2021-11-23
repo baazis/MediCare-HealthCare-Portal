@@ -296,6 +296,8 @@ router.get('/view2', (req, res) => {
   res.render('view2', { data });
 });
 
+
+
 // LOGOUT ROUTE
 router.get('/logout', (req, res) => {
   req.logout();
