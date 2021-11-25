@@ -114,6 +114,25 @@ Now the, HOME MODULE which contains features which doesn’t need for the user t
   <img src="https://user-images.githubusercontent.com/58622363/137139284-9ab47386-025f-4df0-86e8-86adca4acdc3.png" />
 </p>
 
+## Running the Project
+
+Clone the soure Code
+    git clone <url>
+  
+Install dependencies
+  
+    npm install
+  
+Create an env file
+  
+    add your own mongodb url
+ 
+Run the project 
+  
+    npm start
+
+ Open http://localhost:4000 to see the server working!
+
 ## Contributors
 
 ### 1- [Ritika](https://github.com/ritikaxx)
