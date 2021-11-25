@@ -73,6 +73,37 @@ to live update the status of
 their location.</li>
 </ul> 
 
+## MODULES-
+
+Our website has 3 main Stakeholders namely-
+•	Patients
+•	Doctors
+•	Ambulances
+
+So, MediCare is divided into 3 main Modules which are-
+
+### PATIENT-
+Patients have an option to book appointment with the doctor of their choice . They can check the status of the appointment and also the previous appointment details, where they can see the prescription uploaded by the doctor. 
+Similarly, they can book Ambulances and check the status of the arrival of the ambulance.
+
+
+### DOCTORS-
+They can see the appointment requests by the patients, and can confirm the appointment according to their time.
+They can upload the prescriptions for the previous completed appointments.
+
+
+### AMBULANCE PROVIDERS-
+They can provide free/paid services to the patients and update the status of their journey which will be shared with the patient.
+
+
+Now the, HOME MODULE which contains features which doesn’t need for the user to be registered to the website.
+=>GOOGLE MAPS API to fetch the nearby hospitals and police stations
+=>News API to fetch the latest health news.
+=>Community Benefit Insight API to fetch the nearby hospitals,and ambulance providers with their live bed count availability, and  an option to call them directly.
+=>Community Space to ask questions, help other members, and even post articles/ blogs.
+
+
+
 ## User Persona
 
 <p align="center">
