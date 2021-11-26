@@ -28,15 +28,19 @@ tool to test a person’s fitness spontaneously.</li>
 ## Idea Behind It
 
 <ul>
+  
   <li>A plethora of people are unaware of the easily accessible
 healthcare services near them, the importance of which
 has increased in these pandemic times.
 </li>
+  
   <li>According to a study, a large number of deaths are due to
 people not being able to reach hospitals at correct time.</li>
+  
   <li>During Covid-19 times, a large number of people are
 unaware of the precautions and the nearby hospitals to
 rush to in case of emergencies</li>
+  
 </ul> 
 
 ## Target Audience
